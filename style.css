@@ -14,3 +14,7 @@
     color: white;
     font-size: 16px;
 }
+
+body {
+  background-color: rgb(30, 36, 40);
+}
