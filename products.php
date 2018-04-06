@@ -13,7 +13,7 @@ try {
 
     $products = $pf->get('products');
     var_export($products);
-    */
+
     // Get variants for product 10
     /*
     $variants = $pf->get('products/10');
@@ -24,6 +24,7 @@ try {
     $data = $pf->get('products/variant/1007');
     var_export($data);
     */
+    
 } catch (PrintfulApiException $e) { //API response status code was not successful
     echo 'Printful API Exception: ' . $e->getCode() . ' ' . $e->getMessage();
 } catch (PrintfulException $e) { //API call failed
