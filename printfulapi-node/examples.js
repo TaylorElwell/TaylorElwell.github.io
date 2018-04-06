@@ -4,7 +4,7 @@
     //
     // Replace this with your API key
     //
-    var key = 'YOUR_API_KEY';
+    var key = '4rd7og9y-mcy8-doux:gkd7-rx8jf8tf3bxl';
 
     /**
      * Callback for success
@@ -39,10 +39,10 @@
     //
 
     //Get information about the store
-    //pf.get('store').success(ok_callback).error(error_callback);
+    pf.get('store').success(ok_callback).error(error_callback);
 
     //Get product list
-    //pf.get('products').success(ok_callback).error(error_callback);
+    pf.get('products').success(ok_callback).error(error_callback);
 
     //Get variants for product 10
     //pf.get('products/10').success(ok_callback).error(error_callback);

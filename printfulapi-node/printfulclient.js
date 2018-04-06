@@ -8,7 +8,7 @@
 var PrintfulClient = function(key){
 
     //API key
-    var key = key;
+    var key = "4rd7og9y-mcy8-doux:gkd7-rx8jf8tf3bxl";
 
     var https = require('https');
     var querystring = require('querystring');

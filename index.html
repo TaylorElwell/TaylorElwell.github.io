@@ -3,24 +3,18 @@
     <meta charset="UTF-8">
     <title>TaylorElwell.me</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
 <header>
 </header>
 
 <body>
-  <div id="my-store-13610328"></div>
-  <div>
-    <script
-      data-cfasync="false"
-      type="text/javascript"
-      src="https://app.ecwid.com/script.js?13610328&data_platform=code&data_date=2018-04-06"
-      charset="utf-8"></script>
-    <script
-      type="text/javascript">
-      xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-13610328");
-    </script>
-  </div>
+  <script src="printfulclient.js"></script>
+  <script>pf.get('store').success(ok_callback).error(error_callback);</script>
 
+  <div class="store"></div>
+  
     <div class="grid">
         <div>1</div>
         <div>2</div>
