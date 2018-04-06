@@ -1,9 +1,6 @@
 
     var PrintfulClient = require('/printfulclient.js');
 
-    //
-    // Replace this with your API key
-    //
     var key = '5jlzgir0-yfos-v483:lky0-et2jdgnhk76u';
 
     /**
