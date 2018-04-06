@@ -1,5 +1,5 @@
 
-    var PrintfulClient = require('./printfulclient.js');
+    var PrintfulClient = require('/printfulclient.js');
 
     //
     // Replace this with your API key
@@ -32,20 +32,20 @@
     }
 
     ///Construct client
-    var pf = new PrintfulClient(key);
+    var Printful = new PrintfulClient(key);
 
     //
     //Uncomment any of the following examples to test it
     //
 
     //Get information about the store
-    pf.get('store').success(ok_callback).error(error_callback);
+    Printful.get('store').success(ok_callback).error(error_callback);
 
     //Get product list
-    pf.get('products').success(ok_callback).error(error_callback);
+    //pf.get('products').success(ok_callback).error(error_callback);
 
     //Get variants for product 10
-    pf.get('products/10').success(ok_callback).error(error_callback);
+    //pf.get('products/10').success(ok_callback).error(error_callback);
 
     //Get information about Variant 1007
     //pf.get('products/variant/1007').success(ok_callback).error(error_callback);
@@ -66,8 +66,8 @@
     //pf.delete('orders/23479').success(ok_callback).error(error_callback);
 
     //Create an order
-/
-    pf.post('orders',
+
+    Printful.post('orders',
         {
             recipient:  {
                 name: 'John Doe',
@@ -104,11 +104,11 @@
             ]
          }
     ).success(ok_callback).error(error_callback);
-*/
+
 
     //Create an order and confirm immediately
 /*
-    pf.post('orders',
+    Printful.post('orders',
         {
             recipient:  {
                 name: 'John Doe',
@@ -136,7 +136,7 @@
 
     //Calculate shipping rates for an order
 /*
-    pf.post('shipping/rates',{
+    Printful.post('shipping/rates',{
         recipient: {
             country_code: 'US',
             state_code: 'CA'
