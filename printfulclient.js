@@ -8,7 +8,7 @@
 var PrintfulClient = function(key){
 
     //API key
-    var key = "4rd7og9y-mcy8-doux:gkd7-rx8jf8tf3bxl";
+    var key = "5jlzgir0-yfos-v483:lky0-et2jdgnhk76u";
 
     var https = require('https');
     var querystring = require('querystring');
@@ -90,7 +90,7 @@ var PrintfulClient = function(key){
         }
 
         var options = {
-            host: 'api.theprintful.com',
+            host: 'api.printful.com',
             port: 443,
             path: '/'+ path,
             method: method,

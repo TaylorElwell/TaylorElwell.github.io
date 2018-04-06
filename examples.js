@@ -4,7 +4,7 @@
     //
     // Replace this with your API key
     //
-    var key = '4rd7og9y-mcy8-doux:gkd7-rx8jf8tf3bxl';
+    var key = '5jlzgir0-yfos-v483:lky0-et2jdgnhk76u';
 
     /**
      * Callback for success
@@ -45,7 +45,7 @@
     pf.get('products').success(ok_callback).error(error_callback);
 
     //Get variants for product 10
-    //pf.get('products/10').success(ok_callback).error(error_callback);
+    pf.get('products/10').success(ok_callback).error(error_callback);
 
     //Get information about Variant 1007
     //pf.get('products/variant/1007').success(ok_callback).error(error_callback);
@@ -66,7 +66,7 @@
     //pf.delete('orders/23479').success(ok_callback).error(error_callback);
 
     //Create an order
-/*
+/
     pf.post('orders',
         {
             recipient:  {
