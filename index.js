@@ -1,23 +1,25 @@
-var PrintfulClient = require('./printfulclient.js');
+const PRINTFUL_SEARCH_URL = 'https://api.printful.com/products';
 
-var key = '5jlzgir0-yfos-v483:lky0-et2jdgnhk76u';
-
-var ok_callback = function(data, info){
-    console.log('SUCCESS');
-    console.log(data);
-    //If response includes paging information, show total number available
-    if(info.total_items){
-        console.log('Total items available: '+info.total_items);
-    }
+function getDataFromApi(searchTerm, callback) {
+  const query = {
+    q: `${searchTerm} in:name`,
+    per_page: 5
+  }
+  $.getJSON(PRINTFUL_SEARCH_URL, query, callback);
 }
 
-var error_callback = function(message, info){
-    console.log('ERROR ' + message);
-    //Dump raw response
-    console.log(info.response_raw);
+function renderResult(result) {
+  return `
+    <div>
+      <h2>
+      <a class="js-result-name" href="${result.html_url}" target="_blank">${result.name}</a> by <a class="js-user-name" href="${result.owner.html_url}" target="_blank">${result.owner.login}</a></h2>
+      <p>Number of watchers: <span class="js-watchers-count">${result.watchers_count}</span></p>
+      <p>Number of open issues: <span class="js-issues-count">${result.open_issues}</span></p>
+    </div>
+  `;
 }
 
-///Construct client
-var pf = new PrintfulClient(key);
-
-pf.get('products').success(ok_callback).error(error_callback);
+function displayPrintfulSearchData(data) {
+  const results = data.items.map((item, index) => renderResult(item));
+  $('.js-search-results').html(results);
+}
