@@ -4,9 +4,11 @@
  * copyright 2014 Idea Bits LLC
  */
 
+
 var PrintfulClient = function(key){
 
-    var key = "5jlzgir0-yfos-v483:lky0-et2jdgnhk76u";
+    //API key
+    var key = key;
 
     var https = require('https');
     var querystring = require('querystring');
@@ -20,20 +22,46 @@ var PrintfulClient = function(key){
     this.get = function(path, params){
         return new Request('GET', path, null, params);
     };
+
+    /*
+     * Perform a DELETE request to the API
+     * path - Request path (e.g. 'orders' or 'orders/123')
+     * params - Additional GET parameters as a hash
+     */
     this.delete = function(path, params){
         return new Request('DELETE', path, null, params);
     };
+
+    /*
+     * Perform a POST request to the API
+     * path - Request path (e.g. 'orders' or 'orders/123')
+     * data - Request body data as a hash
+     * params - Additional GET parameters as a hash
+     */
     this.post = function(path, data, params){
         return new Request('POST', path, data, params);
     };
+
+    /*
+     * Perform a PUT request to the API
+     * path - Request path (e.g. 'orders' or 'orders/123')
+     * data - Request body data as a hash
+     * params - Additional GET parameters as a hash
+     */
     this.put = function(path, data, params){
         return new Request('PUT', path, data, params);
     };
 
+    /*
+     * Generic request wrapper returned by all API request functions
+     * .success(callback) - set the success callback
+     * .error(callback) - set the error callback
+     */
     var Request = function(method, path, data, params){
         var _success, _error;
 
-        var info = {//Additinal info about the request
+        //Additinal info about the request
+        var info = {
             code: null,//Response status code
             result: null,//Response result element data
             response: null,//Full Response data
@@ -45,13 +73,15 @@ var PrintfulClient = function(key){
             params: params
         };
 
+        //Set up success callback
         this.success = function(callback){
-            _success = callback;//Set up success callback
+            _success = callback;
             return this;
         }
 
+        //Set up error callback
         this.error = function(callback){
-            _error = callback;//Set up error callback
+            _error = callback;
             return this;
         }
 
@@ -60,7 +90,7 @@ var PrintfulClient = function(key){
         }
 
         var options = {
-            host: 'api.printful.com',
+            host: 'api.theprintful.com',
             port: 443,
             path: '/'+ path,
             method: method,
@@ -123,4 +153,4 @@ var PrintfulClient = function(key){
 
 }
 
-// module.exports = PrintfulClient;
+module.exports = PrintfulClient;
