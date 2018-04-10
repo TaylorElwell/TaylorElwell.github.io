@@ -90,7 +90,7 @@ var PrintfulClient = function(key){
         }
 
         var options = {
-            host: 'api.theprintful.com',
+            host: 'api.printful.com',
             port: 443,
             path: '/'+ path,
             method: method,
